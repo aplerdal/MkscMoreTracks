@@ -1,37 +1,24 @@
-# Toolchain
-AS = arm-none-eabi-as
-LD = arm-none-eabi-ld
-OBJCOPY = arm-none-eabi-objcopy
-FLAGS = -mthumb
+# Project name
+PROJECT = MoreTracks
 
-NAME = MoreTracks
-# File names
-SRC = $(NAME).s
-OBJ = $(NAME).o
-ELF = $(NAME).elf
-BIN = $(NAME).bin
-LINKER_SCRIPT = linker.ld
+# Input and output files
+ROM = $(PROJECT).gba
+ASM_FILES = $(PROJECT).s
+PATCHED_ROM = $(PROJECT).gba
 
-# Default target
-all: $(BIN)
+# ARMIPS executable path
+ARMIPS = ./armips
 
-# Assemble the source file into an object file
-$(OBJ): $(SRC)
-	$(AS) $(FLAGS) -o $@ $<
+# Default rule to assemble the project
+all: $(PATCHED_ROM)
 
-# Link the object file into an ELF using a linker script
-$(ELF): $(OBJ) $(LINKER_SCRIPT)
-	$(LD) -T $(LINKER_SCRIPT) -o $@ $<
-	rm -f $(OBJ)
-
-# Extract binary from ELF
-$(BIN): $(ELF)
-	$(OBJCOPY) -O binary $< $@
-	rm -f $(ELF)
+# Rule to create the patched ROM using armips
+$(PATCHED_ROM): $(ASM_FILES)
+	$(ARMIPS) $(ASM_FILES)
 
 # Clean up generated files
 clean:
-	rm -f $(OBJ) $(ELF) $(BIN)
+	rm -f $(PATCHED_ROM)
 
-# Phony targets to prevent conflicts with files named 'clean' or 'all'
-.PHONY: clean all
+# PHONY targets are not actual files
+.PHONY: all clean
