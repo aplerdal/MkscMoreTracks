@@ -11,9 +11,9 @@ setMKSCTextVram:
 	ldr r3, _sizeMKSC
 	bl 0x080303e4
 	b swapPage
-_textBufferMKSC:	.word 0x02018000
-_vramAddrMKSC:		.word 0x06010A00
-_sizeMKSC:		.word 0x80000100
+_textBufferMKSC:.word 0x02018000
+_vramAddrMKSC:	.word 0x06010A00
+_sizeMKSC:	.word 0x80000100
 setSMKTextVram:
 	bl 0x8030434
 	ldr r1,_textBufferSMK
@@ -21,9 +21,9 @@ setSMKTextVram:
 	ldr r3,_sizeSMK
 	bl 0x080303e4
 	b swapPage
-_textBufferSMK:		.word 0x02017c00
-_vramAddrSMK:		.word 0x06010A00
-_sizeSMK:		.word 0x80000100
+_textBufferSMK:	.word 0x02017c00
+_vramAddrSMK:	.word 0x06010A00
+_sizeSMK:	.word 0x80000100
 swapPage:
 	ldr r1, _0x11e4
 	add r1, r8
@@ -40,8 +40,7 @@ b8d0return:
 	ldr r0, _0x0800B8D5
 	bx r0
 _0x0800B8D5:	.word 0x0800B8D5
-_0x11e4: 		.word 0x000011e4
-
+_0x11e4:	.word 0x000011e4
 .byte 0x32, 0x61, 0x61, 0x32, 0x3A, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d, 0x2d
 @ 2aa2 data
 @ Replace 2aa2 with a jump to this address
@@ -67,10 +66,11 @@ mksc:
 	lsl r4, r1, #0x2
 	add r0, r4, #0x0
 	bl 0x8033bac
+.align 2
 return2aa2:
 	ldr r1, _08002abc
 	bx r1
-_08002abc: .word 0x08002abc
+_08002abc:	.word 0x08002abc
 LoadTrackPg3:
 	adr r1, _trackOffsetTable
 	lsl r0, r0, #0x2
