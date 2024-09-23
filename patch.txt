@@ -1,4 +1,0 @@
-This file lists all of the patches that need to be made to the ROM
-This is for documentation purposes only, IPS patches are provided for all of these.
-
-0xb8d0 > F4 F3 9E FB 09 E0
