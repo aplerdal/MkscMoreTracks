@@ -14,7 +14,7 @@ all: $(PATCHED_ROM)
 
 # Rule to create the patched ROM using armips
 $(PATCHED_ROM): $(ASM_FILES)
-	$(ARMIPS) $(ASM_FILES)
+	$(ARMIPS) $(ASM_FILES) -temp $(PROJECT).txt
 
 # Clean up generated files
 clean:

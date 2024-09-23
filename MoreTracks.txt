@@ -1,0 +1,346 @@
+﻿; 2 files included
+; 325 lines
+; 38 labels
+; 0 equations
+
+; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s
+; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s
+
+FFFFFFFF .gba                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 1
+FFFFFFFF .thumb                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 1
+FFFFFFFF .open "D:\Roms\GBA\asmHacks\MoreTrackHack\mksc.gba","D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatch.gba",0x08000000; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 2
+08061364 lz77uncompwram:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 4
+08030434 loaddatastatus:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 5
+080303E4 setvrambuffer:                                               ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 6
+08033BBC gettrackoffsetsmk:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 7
+08033BAC gettrackoffsetmksc:                                          ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 8
+08033BDC gettrackoffsetbattle:                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 9
+08000000 .org 0x0800B8D0                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 1
+0800B8D0 .area 0x00000056                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 2
+0800B8D0    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 3
+0800B8D2    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 4
+0800B8D4 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 5
+0800B8D4 .word 0x08400001                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 5
+0800B8D8 .fill 0x0000004E,0x00                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 5
+0800B926 .endarea                                                     ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 5
+0800B926 .org 0x08002AA2                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 8
+08002AA2 .area 0x0000001A                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 9
+08002AA2    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 10
+08002AA4    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 11
+08002AA6 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 12
+08002AA8 .word 0x08400059                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 12
+08002AAC .fill 0x00000010,0x00                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 12
+08002ABC .endarea                                                     ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 12
+08002ABC .org 0x080094FA                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 16
+080094FA    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 17
+080094FE .org 0x0800AD22                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 18
+0800AD22    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 19
+0800AD26 .org 0x080088FA                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 22
+080088FA    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 23
+080088FC    bne                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 24
+080088FE .org 0x08008956                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 27
+08008956 .area 0x00000076                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 28
+08008956    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 29
+08008958    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 30
+0800895A .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 31
+0800895C .word 0x08400215                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 31
+08008960 .fill 0x0000006C,0x00                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 31
+080089CC .endarea                                                     ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracksPatches.s line 31
+080089CC .org 0x08400000                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 13
+08400000 replace800b8d0:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 14
+08400000    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 15
+08400002    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 16
+08400004    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 17
+08400006    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 18
+08400008 @@setmksctextvram:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 19
+08400008    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 20
+0840000C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 21
+0840000E    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 22
+08400010    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 23
+08400012    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 24
+08400016    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 25
+08400018 @@setsmktextvram:                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 26
+08400018    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 27
+0840001C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 28
+0840001E    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 29
+08400020    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 30
+08400022    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 31
+08400026    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 32
+08400028 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 33
+08400028 .word 0x02018000                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 33
+0840002C .word 0x06010A00                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 33
+08400030 .word 0x80000100                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 33
+08400034 .word 0x02017C00                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 33
+08400038 @@swappage:                                                  ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 34
+08400038    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 35
+0840003A    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 36
+0840003C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 37
+0840003E    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 38
+08400040    bne                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 39
+08400042    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 40
+08400044    str                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 41
+08400046    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 42
+08400048 @@nextpage:                                                  ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 43
+08400048    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 44
+0840004A    str                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 45
+0840004C @@b8d0return:                                                ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 46
+0840004C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 47
+0840004E    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 48
+08400050 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 49
+08400050 .word 0x000011E4                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 49
+08400054 .word 0x0800B8D5                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 49
+08400058 replace8002aa2:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 52
+08400058    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 53
+0840005A    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 54
+0840005C    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 55
+0840005E    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 56
+08400060 @@page3:                                                     ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 57
+08400060    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 58
+08400062    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 59
+08400064    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 60
+08400066    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 61
+0840006A    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 62
+0840006C @@smk:                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 63
+0840006C    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 64
+0840006E    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 65
+08400070    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 66
+08400072    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 67
+08400076    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 68
+08400078 @@mksc:                                                      ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 69
+08400078    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 70
+0840007A    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 71
+0840007C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 72
+0840007E    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 73
+08400082 .align 0x00000002                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 74
+08400082 @@return2aa2:                                                ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 75
+08400082    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 76
+08400084    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 77
+08400086 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 78
+08400088 .word 0x08002ABD                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 78
+0840008C gettrackoffsetpg3:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 79
+0840008C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 80
+0840008E    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 81
+08400090    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 82
+08400092    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 83
+08400094    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 84
+08400096 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 85
+08400098 .word 0x0840009C                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 85
+0840009C .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 86
+0840009C _trackoffsettable:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 87
+0840009C .byte 0x04,0x00,0x00,0x00,0x05,0x00,0x00,0x00,0x09,0x00,0x00,0x00,0x07,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 88
+084000AC .byte 0x0C,0x00,0x00,0x00,0x11,0x00,0x00,0x00,0x12,0x00,0x00,0x00,0x0B,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 89
+084000BC .byte 0x08,0x00,0x00,0x00,0x14,0x00,0x00,0x00,0x0D,0x00,0x00,0x00,0x06,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 90
+084000CC .byte 0x10,0x00,0x00,0x00,0x0E,0x00,0x00,0x00,0x0A,0x00,0x00,0x00,0x0F,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 91
+084000DC .byte 0x17,0x00,0x00,0x00,0x15,0x00,0x00,0x00,0x16,0x00,0x00,0x00,0x13,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 92
+084000EC .byte 0x1C,0x00,0x00,0x00,0x1C,0x00,0x00,0x00,0x1C,0x00,0x00,0x00,0x1C,0x00,0x00,0x00,; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 93
+084000FC loadtracktext:                                               ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 96
+084000FC    push                                                      ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 97
+084000FE    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 98
+08400100    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 99
+08400102    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 100
+08400104    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 101
+08400106    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 102
+08400108    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 103
+0840010A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 104
+0840010C @@pageswitch:                                                ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 105
+0840010C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 106
+0840010E    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 107
+08400110    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 108
+08400112    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 109
+08400114    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 110
+08400116    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 111
+08400118    bne                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 112
+0840011A @@mksctexthandler:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 113
+0840011A    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 114
+0840011C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 115
+0840011E    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 116
+08400120    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 117
+08400122    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 118
+08400124    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 119
+08400126    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 120
+08400128    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 121
+0840012A    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 122
+0840012C    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 123
+0840012E    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 124
+08400130    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 125
+08400132    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 126
+08400134    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 127
+08400136    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 128
+08400138    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 129
+0840013A @@_08008776:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 130
+0840013A    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 131
+0840013C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 132
+0840013E    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 133
+08400142    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 134
+08400144    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 135
+08400146    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 136
+08400148    sub                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 137
+0840014A    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 138
+0840014C    bge                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 139
+0840014E    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 140
+08400150 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 141
+08400150 .word 0x000011E4                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 141
+08400154 .word 0x000010A4                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 141
+08400158 .word 0x02025400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 141
+0840015C .word 0x080A28C8                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 141
+08400160 @@_0800879c:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 142
+08400160    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 143
+08400162    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 144
+08400164    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 145
+08400166    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 146
+08400168    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 147
+0840016A    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 148
+0840016C @@_080087a8:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 149
+0840016C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 150
+0840016E    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 151
+08400172    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 152
+08400174    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 153
+08400176    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 154
+08400178    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 155
+0840017A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 156
+0840017C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 157
+0840017E    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 158
+08400182    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 159
+08400184    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 160
+08400186    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 161
+08400188    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 162
+0840018A    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 163
+0840018C    ble                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 164
+0840018E    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 165
+08400190 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 166
+08400190 .word 0x080E7FEC                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 166
+08400194 .word 0x02025400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 166
+08400198 @@smktexthandler:                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 167
+08400198    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 168
+0840019A    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 169
+0840019C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 170
+0840019E    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 171
+084001A0    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 172
+084001A2    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 173
+084001A4    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 174
+084001A6    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 175
+084001A8    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 176
+084001AA    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 177
+084001AC    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 178
+084001AE    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 179
+084001B0    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 180
+084001B2    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 181
+084001B4    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 182
+084001B6    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 183
+084001B8    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 184
+084001BA @@_080087f6:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 185
+084001BA    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 186
+084001BC    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 187
+084001BE    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 188
+084001C2    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 189
+084001C4    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 190
+084001C6    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 191
+084001C8    sub                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 192
+084001CA    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 193
+084001CC    bge                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 194
+084001CE    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 195
+084001D0 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 196
+084001D0 .word 0x02025400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 196
+084001D4 .word 0x080A4A68                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 196
+084001D8 @@_08008814:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 197
+084001D8    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 198
+084001DA    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 199
+084001DC    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 200
+084001DE    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 201
+084001E0    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 202
+084001E2    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 203
+084001E4 @@_08008820:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 204
+084001E4    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 205
+084001E6    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 206
+084001EA    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 207
+084001EC    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 208
+084001EE    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 209
+084001F0    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 210
+084001F2    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 211
+084001F4    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 212
+084001F6    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 213
+084001FA    mov                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 214
+084001FC    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 215
+084001FE    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 216
+08400200    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 217
+08400202    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 218
+08400204    ble                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 219
+08400206 @@return:                                                    ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 220
+08400206    pop                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 221
+08400208    pop                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 222
+0840020A    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 223
+0840020C .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 224
+0840020C .word 0x080E7FEC                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 224
+08400210 .word 0x02025400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 224
+08400214 replace8008956:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 231
+08400214    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 232
+08400216    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 233
+08400218    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 234
+0840021A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 235
+0840021C    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 236
+0840021E    bne                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 237
+08400220    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 238
+08400222    bne                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 239
+08400224 @@coverarthandler:                                           ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 240
+08400224    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 241
+08400226    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 242
+08400228    cmp                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 243
+0840022A    beq                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 244
+0840022C @@pg3handler:                                                ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 245
+0840022C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 246
+0840022E    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 247
+08400230    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 248
+08400234    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 249
+08400236 @@mksccoverhandler:                                          ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 250
+08400236    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 251
+08400238    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 252
+0840023A    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 253
+0840023E    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 254
+08400240 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 255
+08400240 .word 0x000011E4                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 255
+08400244 .word 0x080E7FEC                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 255
+08400248 @@_08008984:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 256
+08400248    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 257
+0840024A    and                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 258
+0840024C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 259
+0840024E    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 260
+08400252 @@_0800898e:                                                 ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 261
+08400252    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 262
+08400254    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 263
+08400256    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 264
+08400258    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 265
+0840025A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 266
+0840025C    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 267
+08400260    b                                                         ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 268
+08400262 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 269
+08400264 .word 0x080E7FEC                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 269
+08400268 .word 0x02004400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 269
+0840026C @@minimapcover:                                              ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 270
+0840026C    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 271
+0840026E    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 272
+08400270    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 273
+08400274    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 274
+08400276    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 275
+08400278    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 276
+0840027A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 277
+0840027C    lsl                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 278
+0840027E    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 279
+08400280    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 280
+08400282    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 281
+08400284    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 282
+08400286    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 283
+08400288    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 284
+0840028A    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 285
+0840028C    add                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 286
+0840028E    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 287
+08400290    bl                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 288
+08400294 @@return:                                                    ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 289
+08400294    ldr                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 290
+08400296    bx                                                        ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 291
+08400298 .align 0x00000004                                            ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+08400298 .word 0x080E7FEC                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+0840029C .word 0x08258000                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+084002A0 .word 0x082580C4                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+084002A4 .word 0x02004400                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+084002A8 .word 0x08008B3F                                             ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 292
+084002AC .close                                                       ; D:\Roms\GBA\asmHacks\MoreTrackHack\MoreTracks.s line 293
