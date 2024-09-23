@@ -19,13 +19,14 @@
 	bl LoadTrackText
 
 ; Override if statement result
+.thumb
 .org 0x080088fa
 	cmp r0, #0x1
-	bne 0x08008904
+	bne 0x8008904
 
-; Track cover art override
+; Track cover art override. Don't override pools so no fill.
 .org 0x08008956
-.area 0x76, 0x00
+.area 0xA
 	ldr r1, =(replace8008956+1)
 	bx r1
 .pool

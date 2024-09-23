@@ -227,21 +227,21 @@ LoadTrackText:
 ; track cover if statement replacement
 ;
 
-.thumb
 replace8008956:
 	ldr r1, =0x000011E4
 	add r0, r6, r1
-	ldr r0, [r0, #0x00]
+	ldr r0, [r0, #0x0]
 	ldr r1, [r6, #0x10]
-	cmp r0, #0x01 
-	bne @@CoverArtHandler ; Break if page != smk tracks
+	cmp r0, #0x01
+	bne @@CoverArtHandler
 	cmp r1, #0x03
-	bne @@MinimapCover ; or battle mode enabled
+	bne @@MinimapCover
 @@CoverArtHandler:
 	cmp r1, #0x03
-	beq @@_08008984
+	beq @@BattleCoverHandler
 	cmp r0, #0x0
 	beq @@MKSCCoverHandler
+.pool
 @@Pg3Handler:
 	ldr r4, =0x080E7FEC
 	add r0, r2, #0x0
@@ -253,7 +253,7 @@ replace8008956:
 	bl getTrackOffsetMKSC
 	b @@_0800898E
 .pool
-@@_08008984:
+@@BattleCoverHandler:
 	ldr r4, =0x080E7FEC
 	and r2, r1
 	add r0, r2, #0x0
@@ -265,7 +265,7 @@ replace8008956:
 	ldr r0, [r2, #0x24]
 	ldr r1, =0x02004400
 	bl LZ77UnCompWram
-	b @@return
+	b return8956
 .pool
 @@MinimapCover:
 	ldr r4, =0x080E7FEC
@@ -276,7 +276,7 @@ replace8008956:
 	ldr r2, [r0, #0x00]
 	ldr r1, [r2, #0x00]
 	lsl r1, r1, #0x02
-	ldr r0, =0x8258000
+	ldr r0, =0x08258000
 	add r1, r1, r0
 	ldr r1, [r1, #0x00]
 	add r0, r1, r0
@@ -286,8 +286,10 @@ replace8008956:
 	add r0, r0, r1
 	ldr r1, =0x02004400
 	bl LZ77UnCompWram
-@@return:
-	ldr r1, =0x08008b3f ; return addr + thumb
+return8956:
+	ldr r1, =0x080089D1
 	bx r1
 .pool
+
+
 .Close
