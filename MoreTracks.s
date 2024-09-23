@@ -291,5 +291,28 @@ return8956:
 	bx r1
 .pool
 
-
+replace8000c52e:
+	lsl r0, r1, #0x1
+	add r0, r0, r1
+	add r0, r0, r2
+	lsl r0, r0, #0x2
+	ldr r1, =0x10A4
+	add r1, r8
+	add r1, r1, r0
+	ldr r0, [r1,#0x0]
+	cmp r0, #0x0
+	beq @@return
+	ldrh r0, [r5,#0x0]
+	ldr r0, =0x2222
+	strh r0, [r5, #0x0]
+	ldrh r1, [r4, #0x0]
+	mov r0, #0x40
+	orr r1,r0
+	ldrh r0, [r4, #0x0]
+	orr r1, r6
+	strh r1, [r4, #0x0]
+@@return:
+	ldr r1, = 0x800c555 ; return addr + thumb bit
+	bx r1
+.pool
 .Close
