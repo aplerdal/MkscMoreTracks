@@ -11,6 +11,6 @@ If you are on linux you will have to build armips yourself. The repository is ht
 ```sh
 armips MoreTracks.s
 ```
-to build `MoreTracksPatch.gba`.
+to build `MoreTracks.gba`.
 
 If you need help with building message `antimattur` on discord.
