@@ -265,7 +265,7 @@ replace8008956:
 	ldr r0, [r2, #0x24]
 	ldr r1, =0x02004400
 	bl LZ77UnCompWram
-	b return8956
+	b @@return
 .pool
 @@MinimapCover:
 	ldr r4, =0x080E7FEC
@@ -286,7 +286,7 @@ replace8008956:
 	add r0, r0, r1
 	ldr r1, =0x02004400
 	bl LZ77UnCompWram
-return8956:
+@@return:
 	ldr r1, =0x080089D1
 	bx r1
 .pool
