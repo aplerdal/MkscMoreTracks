@@ -309,7 +309,8 @@ replace8000c52e:
 	bx r1
 .pool
 .align 16
-.ascii "Data:           "
+.ascii "Data:"
+.align 16
 _trackOffsetTable: .incbin "trackOffsetTable.bin"
 
 .Close
