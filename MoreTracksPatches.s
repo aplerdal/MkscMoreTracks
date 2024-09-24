@@ -42,6 +42,7 @@
 .pool
 .endarea
 
+; Controls Track image layout
 .org 0x08008e2a
 	cmp r0, #0x1
 	beq 0x08008ee0
