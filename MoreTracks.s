@@ -47,8 +47,7 @@ replace800b8d0:
 	ldr r0, =(0x0800B8D4+1) ; return address
 	bx r0
 .pool
-; 2aa2 data
-; Replace 2aa2 with a jump to this address
+; Pretty sure this handles which track is loaded when starting the game.
 replace8002aa2:
 	cmp r0, #0x0
 	beq @@mksc
