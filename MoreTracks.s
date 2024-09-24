@@ -76,7 +76,7 @@ replace8002aa2:
 	bx r1
 .pool
 getTrackOffsetPg3:
-	ldr r1, =org(_trackOffsetTable)
+	ldr r1, =org(trackOffsetTable)
 	lsl r0, r0, #0x2
 	add r0, r0, r1
 	ldr r0, [r0,#0x0]
@@ -309,8 +309,21 @@ replace8000c52e:
 	bx r1
 .pool
 .align 16
+
 .ascii "Data:"
+
 .align 16
-_trackOffsetTable: .incbin "trackOffsetTable.bin"
+trackOffsetTable:
+; Mushroom Cup
+.word 0x04 :: .word 0x05 :: .word 0x09 :: .word 0x07
+; Flower Cup
+.word 0x0C :: .word 0x11 :: .word 0x12 :: .word 0x0B
+; Lightning Cup
+.word 0x08 :: .word 0x14 :: .word 0x0D :: .word 0x06
+; Star Cup
+.word 0x10 :: .word 0x0E :: .word 0x0A :: .word 0x0F
+; Special Cup
+.word 0x17 :: .word 0x15 :: .word 0x16 :: .word 0x13
+
 
 .Close
