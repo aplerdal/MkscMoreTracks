@@ -47,6 +47,7 @@ replace800b8d0:
 	ldr r0, =(0x0800B8D4+1) ; return address
 	bx r0
 .pool
+
 ; Pretty sure this handles which track is loaded when starting the game.
 replace8002aa2:
 	cmp r0, #0x0
@@ -92,16 +93,70 @@ LoadTrackText:
 	ldr r0, [r3, #0x10]
 	mov r1, #0x02
 	cmp r0, #0x01
-	beq @@PageSwitch
+	beq @@SwitchOnPage
 	ldr r1, [r3, #0x14]
-@@PageSwitch:
+@@SwitchOnPage:
 	ldr r4, =0x000011E4
 	add r0, r3, r4
 	ldr r0, [r0, #0x00]
-	cmp r0, #0x2
+	cmp r0, #0x0
 	beq @@MkscTextHandler
+	cmp r0, #0x01
+	beq @@SMKTextHandler
+	; fall into pg3 handler
+@@Pg3TextHandler:
+	lsl r0, r2, #0x01
+	add r0, r0, r2
+	add r0, r0, r1
+	lsl r0, r0, #0x02
+	ldr r4, =0x000010A4
+	add r1, r3, r4
+	add r1, r1, r0
+	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
-	bne @@SMKTextHandler
+	beq @@Pg3UnlockedTextHandler
+	lsl r6, r2, #0x02
+	lsl r0, r2, #0x03
+	add r0, r0, r6
+	lsl r5, r0, #0x08
+	ldr r6, =0x02025400
+	mov r4, #0x03
+@@Pg3LockedTextHandler:
+	add r1, r5, r6
+	ldr r0, =0x080A28C8
+	bl LZ77UnCompWram
+	mov r0, #0xC0
+	lsl r0, r0, #0x02
+	add r5, r5, r0
+	sub r4, r4, #0x01
+	cmp r4, #0x00
+	bge @@Pg3LockedTextHandler
+	b @@return
+@@Pg3UnlockedTextHandler:
+	mov r4, #0x00
+	lsl r6, r2, #0x02
+	ldr r7, =0x080E7FEC
+	lsl r0, r2, #0x03
+	add r0, r0, r6
+	lsl r5, r0, #0x08
+@@GetPg3TextLoop:
+	add r0, r6, r4
+	bl getTrackOffsetPg3
+	lsl r0, r0, #0x02
+	add r0, r0, r7
+	ldr r0, [r0, #0x00]
+	ldr r0, [r0, #0x30]
+	ldr r1, =0x02025400
+	add r1, r5, r1
+	bl LZ77UnCompWram
+	mov r0, #0xC0
+	lsl r0, r0, #0x02
+	add r5, r5, r0
+	add r4, #0x01
+	cmp r4, #0x03
+	ble @@GetPg3TextLoop
+	b @@return
+.pool
 @@MkscTextHandler:
 	lsl r0, r2, #0x01
 	add r0, r0, r2
@@ -112,14 +167,14 @@ LoadTrackText:
 	add r1, r1, r0
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
-	beq @@_0800879C
+	beq @@MKSCUnlockedTextHandler
 	lsl r6, r2, #0x02
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
 	ldr r6, =0x02025400
 	mov r4, #0x03
-@@_08008776:
+@@MKSCLockedTextHandler:
 	add r1, r5, r6
 	ldr r0, =0x080A28C8
 	bl LZ77UnCompWram
@@ -128,17 +183,16 @@ LoadTrackText:
 	add r5, r5, r0
 	sub r4, r4, #0x01
 	cmp r4, #0x00
-	bge @@_08008776
+	bge @@MKSCLockedTextHandler
 	b @@return
-.pool
-@@_0800879C:
+@@MKSCUnlockedTextHandler:
 	mov r4, #0x00
 	lsl r6, r2, #0x02
 	ldr r7, =0x080E7FEC
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
-@@_080087A8:
+@@GetMkscTextLoop:
 	add r0, r6, r4
 	bl getTrackOffsetMKSC
 	lsl r0, r0, #0x02
@@ -153,7 +207,7 @@ LoadTrackText:
 	add r5, r5, r0
 	add r4, #0x01
 	cmp r4, #0x03
-	ble @@_080087A8
+	ble @@GetMkscTextLoop
 	b @@return
 .pool
 @@SMKTextHandler:
@@ -167,14 +221,14 @@ LoadTrackText:
 	add r1, r1, r0
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
-	beq @@_08008814
+	beq @@SMKUnlockedTextHandler
 	lsl r6, r2, #0x02
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
 	ldr r6, =0x02025400
 	mov r4, #0x03
-@@_080087F6:
+@@SMKLockedTextHandler:
 	add r1, r5, r6
 	ldr r0, =0x080A4A68
 	bl LZ77UnCompWram
@@ -183,17 +237,16 @@ LoadTrackText:
 	add r5, r5, r0
 	sub r4, r4, #0x01
 	cmp r4, #0x00
-	bge @@_080087F6
+	bge @@SMKLockedTextHandler
 	b @@return
-.pool
-@@_08008814:
+@@SMKUnlockedTextHandler:
 	mov r4, #0x00
 	lsl r6, r2, #0x02
 	ldr r7, =0x080E7FEC
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
-@@_08008820:
+@@GetSMKTextLoop:
 	add r0, r6, r4
 	bl getTrackOffsetSMK
 	lsl r0, r0, #0x02
@@ -208,7 +261,7 @@ LoadTrackText:
 	add r5, r5, r0
 	add r4, #0x01
 	cmp r4, #0x03
-	ble @@_08008820
+	ble @@GetSMKTextLoop
 @@return:
 	pop {r4, r5, r6, r7}
 	pop {r0}
@@ -306,6 +359,24 @@ replace8000c52e:
 	strh r1, [r4, #0x0]
 @@return:
 	ldr r1, = 0x800c555 ; return addr + thumb bit
+	bx r1
+.pool
+
+replace80089f8:
+	add r2, r3, r6
+	ldr r2, [r2,#0x0]
+	cmp r2, #0x0
+	beq @@MkscHandler
+@@Pg3Handler:
+	bl getTrackOffsetPg3
+	b @@return
+@@MkscHandler:
+	bl getTrackOffsetMKSC
+@@return:
+	lsl r0, r0, #0x2
+	add r0, r0, r4
+	ldr r2, [r0, #0x0]
+	ldr r1, =0x08008a29
 	bx r1
 .pool
 .align 16

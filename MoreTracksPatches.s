@@ -51,6 +51,13 @@
 	cmp r0, #0x1
 	bne 0x08008a02
 
+.org 0x08008a1e
+.area 0x10
+	ldr r2, =(replace80089f8+1)
+	bx r2
+.pool
+.endarea
+
 .org 0x08008afa
 	cmp r0, #0x1
 	bne 0x08008b04
