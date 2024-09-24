@@ -4,13 +4,13 @@
 .org 0x08008666
 	cmp r0, #0x1
 	beq 0x08008694
-
 .org 0x0800B8D0
 .area 0x56, 0x00
 	ldr r1, =(replace800b8d0+1)
 	bx r1
 .pool
 .endarea
+
 
 .org 0x08002aa2
 .area 0x1a, 0x00
@@ -20,15 +20,19 @@
 .endarea
 
 ;Override Load Track Text function
+
 .org 0x080094fa
 	bl LoadTrackText
 .org 0x0800ad22
 	bl LoadTrackText
 
-; Override if statement result
 .org 0x080088fa
 	cmp r0, #0x1
 	bne 0x08008904
+
+.org 0x08008872
+	cmp r0, #0x1
+	bne 0x0800887c
 
 ; Track cover art override. Don't override pools so no fill.
 .org 0x08008956
@@ -38,7 +42,10 @@
 .pool
 .endarea
 
-; Override if statement result
+.org 0x08008e2a
+	cmp r0, #0x1
+	beq 0x08008ee0
+
 .org 0x080089f8
 	cmp r0, #0x1
 	bne 0x08008a02
@@ -51,21 +58,18 @@
 	cmp r0, #0x1
 	bne 0x080092b8
 
-
 .org 0x80095aa ; Might want finer control over this later, but for now just override if statement
 	cmp r0, #0x1
 	beq 0x080095c4
-
 .org 0x0800a9f6
 	cmp r0, #0x1
 	beq 0x0800aa58
-
 .org 0x0800abf0
 	cmp r0, #0x1
 	bne 0x0800ac30
-
+; controls 2bpp vs 8bpp
 .org 0x0800ae66
-	cmp r0, #0x0
+	cmp r0, #0x1
 	bne 0x0800ae70
 
 .org 0x0800b020

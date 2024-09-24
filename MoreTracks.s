@@ -1,5 +1,5 @@
 .gba
-.open "mksc.gba", "MoreTracksPatch.gba", 0x08000000
+.open "mksc.gba", "MoreTracks.gba", 0x08000000
 
 .definelabel lz77uncompwram, 0x8061364
 .definelabel loadDataStatus, 0x8030434
@@ -300,8 +300,9 @@ replace8000c52e:
 	add r1, r8
 	add r1, r1, r0
 	ldr r0, [r1,#0x0]
-	cmp r0, #0x0
-	beq @@return
+	cmp r0, #0x1
+	bne @@return
+@@SetPixelizedCover:
 	ldrh r0, [r5,#0x0]
 	ldr r0, =0x2222
 	strh r0, [r5, #0x0]
