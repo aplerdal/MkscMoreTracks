@@ -9,6 +9,7 @@
 .definelabel getTrackOffsetBattle, 0x08033bdc
 
 .include "MoreTracksPatches.s"
+.include "moveTrackHeader.s"
 
 .org 0x08400000
 replace800b8d0:
@@ -379,13 +380,15 @@ replace80089f8:
 	ldr r1, =0x08008a29
 	bx r1
 .pool
-.align 16
-
-.ascii "Data:"
 
 .align 16
+.ascii "trackOffsetTable"
+.align 16
+
 trackOffsetTable:
+
 ; Mushroom Cup
+;.word 0x04 :: .word 0x05 :: .word 0x09 :: .word 0x07
 .word 0x04 :: .word 0x05 :: .word 0x09 :: .word 0x07
 ; Flower Cup
 .word 0x0C :: .word 0x11 :: .word 0x12 :: .word 0x0B
@@ -396,5 +399,11 @@ trackOffsetTable:
 ; Special Cup
 .word 0x17 :: .word 0x15 :: .word 0x16 :: .word 0x13
 
+.align 16
+.ascii "trackHeaderTable"
+.align 16
+
+trackHeaderTable:
+.incbin "TrackHeaderTable.bin"
 
 .Close
