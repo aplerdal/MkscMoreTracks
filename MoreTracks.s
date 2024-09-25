@@ -136,7 +136,7 @@ LoadTrackText:
 @@Pg3UnlockedTextHandler:
 	mov r4, #0x00
 	lsl r6, r2, #0x02
-	ldr r7, =0x080E7FEC
+	ldr r7, =org(trackHeaderTable)
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
@@ -189,7 +189,7 @@ LoadTrackText:
 @@MKSCUnlockedTextHandler:
 	mov r4, #0x00
 	lsl r6, r2, #0x02
-	ldr r7, =0x080E7FEC
+	ldr r7, =org(trackHeaderTable)
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
@@ -243,7 +243,7 @@ LoadTrackText:
 @@SMKUnlockedTextHandler:
 	mov r4, #0x00
 	lsl r6, r2, #0x02
-	ldr r7, =0x080E7FEC
+	ldr r7, =org(trackHeaderTable)
 	lsl r0, r2, #0x03
 	add r0, r0, r6
 	lsl r5, r0, #0x08
@@ -289,18 +289,18 @@ replace8008956:
 	beq @@MKSCCoverHandler
 .pool
 @@Pg3Handler:
-	ldr r4, =0x080E7FEC
+	ldr r4, =org(trackHeaderTable)
 	add r0, r2, #0x0
 	bl getTrackOffsetPg3
 	b @@_0800898E
 @@MKSCCoverHandler:
-	ldr r4, =0x080E7FEC
+	ldr r4, =org(trackHeaderTable)
 	add r0, r2, #0x0
 	bl getTrackOffsetMKSC
 	b @@_0800898E
 .pool
 @@BattleCoverHandler:
-	ldr r4, =0x080E7FEC
+	ldr r4, =org(trackHeaderTable)
 	and r2, r1
 	add r0, r2, #0x0
 	bl getTrackOffsetBattle
@@ -314,7 +314,7 @@ replace8008956:
 	b @@return
 .pool
 @@MinimapCover:
-	ldr r4, =0x080E7FEC
+	ldr r4, =org(trackHeaderTable)
 	add r0, r2, #0x0
 	bl getTrackOffsetSMK
 	lsl r0, r0, #0x02
