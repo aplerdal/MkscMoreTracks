@@ -8,11 +8,9 @@
 .definelabel getTrackOffsetSMK, 0x08033bbc
 .definelabel getTrackOffsetMKSC, 0x08033bac
 .definelabel getTrackOffsetBattle, 0x08033bdc
-.expfunc ota(dest), (originalTrackPointerTable+dest)-org()
 
 .include "MoreTracksPatches.s"
 .include "MoveTrackHeader.s"
-.include "MoveTrackPointerTable.s"
 
 .org 0x08400000
 replace800b8d0:
@@ -389,7 +387,6 @@ replace80089f8:
 .align 16
 
 trackOffsetTable:
-
 ; Mushroom Cup
 ;.word 0x04 :: .word 0x05 :: .word 0x09 :: .word 0x07
 .word 0x04 :: .word 0x05 :: .word 0x09 :: .word 0x07
@@ -409,8 +406,10 @@ trackOffsetTable:
 trackHeaderTable:
 .incbin "TrackHeaderTable.bin"
 
-trackPointerTable:
-.word ota(0xd4) :: .word ota(0x317c) :: .word ota(0x6380) :: .word ota(0x8354)
-;.word ota(0x0) :: .word ota(0x0) :: .word ord(0x0) :: .word ord(0x0)
+; Move MC1 so the track table has room to expand.
+.org 0x258000
+	.word org(marioCircuit1)
+marioCircuit1:
+.incbin "mksc.gba", 0x2580D4, 0x30A8
 
 .Close
