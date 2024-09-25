@@ -14,7 +14,7 @@ ARMIPS = ./armips
 all: $(PATCHED_ROM)
 
 # Rule to create the patched ROM using armips
-$(PATCHED_ROM): $(ASM_FILES) $(PROJECT)Patches.s moveTrackHeader.s
+$(PATCHED_ROM): $(ASM_FILES) $(PROJECT)Patches.s MoveTrackHeader.s MoveTrackPointerTable.s
 	$(ARMIPS) $(ASM_FILES) -temp $(PROJECT).txt
 
 # Clean up generated files

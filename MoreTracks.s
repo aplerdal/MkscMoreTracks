@@ -1,15 +1,18 @@
 .gba
 .open "mksc.gba", "MoreTracks.gba", 0x08000000
 
+.definelabel originalTrackPointerTable, 0x8258000
 .definelabel lz77uncompwram, 0x8061364
 .definelabel loadDataStatus, 0x8030434
 .definelabel setVramBuffer, 0x080303e4
 .definelabel getTrackOffsetSMK, 0x08033bbc
 .definelabel getTrackOffsetMKSC, 0x08033bac
 .definelabel getTrackOffsetBattle, 0x08033bdc
+.expfunc ota(dest), (originalTrackPointerTable+dest)-org()
 
 .include "MoreTracksPatches.s"
-.include "moveTrackHeader.s"
+.include "MoveTrackHeader.s"
+.include "MoveTrackPointerTable.s"
 
 .org 0x08400000
 replace800b8d0:
@@ -405,5 +408,9 @@ trackOffsetTable:
 
 trackHeaderTable:
 .incbin "TrackHeaderTable.bin"
+
+trackPointerTable:
+.word ota(0xd4) :: .word ota(0x317c) :: .word ota(0x6380) :: .word ota(0x8354)
+;.word ota(0x0) :: .word ota(0x0) :: .word ord(0x0) :: .word ord(0x0)
 
 .Close
