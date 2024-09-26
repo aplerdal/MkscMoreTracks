@@ -4,7 +4,7 @@ PROJECT = MoreTracks
 # Input and output files
 ROM = $(PROJECT).gba
 MAIN_FILE = $(PROJECT).s
-ASM_FILES = $(MAIN_FILE) $(PROJECT)Patches.s MoveTrackHeader.s Data.s TrackPointerTable.s
+ASM_FILES = $(MAIN_FILE) $(PROJECT)Patches.s MoveTrackHeader.s Data.s TrackPointerTable.s TrackHeaderTable.bin
 PATCHED_ROM = $(PROJECT).gba
 MGBA_PATH = "C:\Program Files\mGBA\mGBA.exe"
 

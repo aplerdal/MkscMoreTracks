@@ -14,7 +14,7 @@ CustomTrackName:
 ; TODO custom track header format so you can include custom track
 
 .org 0x082580d4
-
+.word org(customTrack)-0x08258000
 
 
 
@@ -23,4 +23,4 @@ CustomTrackName:
 
 ; Do not edit below this unless you know what you are doing
 .org 0x08258000
-	.word org(marioCircuit1)
+	.word (orga(marioCircuit1)-0x258000)

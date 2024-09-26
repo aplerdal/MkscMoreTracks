@@ -382,5 +382,6 @@ replace80089f8:
 	ldr r1, =0x08008a29
 	bx r1
 .pool
+
 .include "Data.s"
 .Close
