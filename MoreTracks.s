@@ -117,7 +117,7 @@ LoadTrackText:
 	add r1, r1, r0
 	ldr r0, [r1, #0x00]
 	cmp r0, #0x00
-	beq @@Pg3UnlockedTextHandler
+	b @@Pg3UnlockedTextHandler ; Always unlocked to test
 	lsl r6, r2, #0x02
 	lsl r0, r2, #0x03
 	add r0, r0, r6

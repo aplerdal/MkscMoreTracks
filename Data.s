@@ -45,6 +45,7 @@ customTrackHeader:
 	.word 0x2
 	.word 0x0
 	.word 0x1b
+	.word 0x080EBAE0
 	.word 0x080EB720
 	.word org(customTrackCover)
 	.word org(customTrackCoverPal)

@@ -4,7 +4,8 @@ PROJECT = MoreTracks
 # Input and output files
 ROM = $(PROJECT).gba
 MAIN_FILE = $(PROJECT).s
-ASM_FILES = $(MAIN_FILE) $(PROJECT)Patches.s MoveTrackHeader.s Data.s TrackPointerTable.s TrackHeaderTable.bin
+ASM_FILES = $(wildcard *.s)
+DATA_FILES = $(wildcard exampleTrack/*.bin)
 PATCHED_ROM = $(PROJECT).gba
 MGBA_PATH = "C:\Program Files\mGBA\mGBA.exe"
 
@@ -15,7 +16,7 @@ ARMIPS = ./armips
 all: $(PATCHED_ROM)
 
 # Rule to create the patched ROM using armips
-$(PATCHED_ROM): $(ASM_FILES)
+$(PATCHED_ROM): $(ASM_FILES) $(DATA_FILES)
 	$(ARMIPS) $(MAIN_FILE) -temp $(PROJECT).txt
 
 # Clean up generated files
