@@ -3,7 +3,9 @@ An asm hack of Mario Kart: Super Circuit that adds more tracks.
 
 IPS patches will be published in the releases tab when the hack works.
 https://github.com/aplerdal/MkscMoreTracks/releases
-
+## Todo
+- [ ] Fix tracks loading as incorrect mode (SNES rather than MKSC)
+- [ ] Create documentation and better examples
 ## Building
 You will need a mksc rom named `mksc.gba` in the same folder as the code. Then, if you are on Windows you can drag the `MoreTracks.s` file onto `armips.exe` in File Explorer to generate `MoreTracks.gba`.
 
