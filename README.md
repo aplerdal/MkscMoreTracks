@@ -1,6 +1,8 @@
 # MkscMoreTracks
 An asm hack of Mario Kart: Super Circuit that adds more tracks.
 
+Not intended to be used individually. Planned for use in AdvancedEdit6
+
 IPS patches will be published in the releases tab when the hack works.
 https://github.com/aplerdal/MkscMoreTracks/releases
 ## Todo
